@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MyClass"
+             x:Class="MyClass.Pages.NewLessonPage">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" 
+                    Source="new_lesson"
+                    WidthRequest="250"
+                    />
+
+                <Label Grid.Row="1"  Text="New Lesson" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0, 0, 0, 20"
+                    />
+
+                <StackLayout Grid.Row="2" Padding="30, 20" Spacing="10">
+                    <Entry Placeholder="Enter lesson's name" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="LessonNameEntry" />
+                    <Entry Placeholder="Enter lesson's faculty" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="LessonFacultyEntry"  />
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Button Text="Add New" TextColor="#3D3D3D" BackgroundColor="#36A8C1" CornerRadius="3" 
+                                WidthRequest="130" Clicked="AddNewLessonAction"  />
+                        <Button Text="Cancel" TextColor="#36A8C1" BackgroundColor="#3D3D3D"
+                                WidthRequest="130" 
+                                HorizontalOptions="EndAndExpand" Clicked="CancelAction" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

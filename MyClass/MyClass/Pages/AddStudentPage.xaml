@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MyClass"
+             x:Class="MyClass.Pages.AddStudentPage">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" 
+                    Source="new_student"
+                    WidthRequest="250"
+                    />
+
+                <Label Grid.Row="1"  Text="Add Student" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0, 0, 0, 20"
+                    />
+
+                <StackLayout Grid.Row="2" Padding="30, 20" Spacing="5">
+                    <Picker Title="-- Select a Lesson --" x:Name="LessonsPicker" 
+                            ItemsSource="{Binding LessonsList}" 
+                            SelectedItem="{Binding SelectedLesson, Mode=TwoWay}" 
+                            ItemDisplayBinding="{Binding Name}" />
+                    <Entry Placeholder="Enter student's CIN" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentCINEntry"  />
+                    <Entry Placeholder="Enter student's first name" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentFirstNameEntry"  />
+                    <Entry Placeholder="Enter student's last name" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentLastNameEntry"  />
+                    <Entry Placeholder="Enter student's email" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentEmailEntry"  />
+                    <Entry Placeholder="Enter student's phone" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentPhoneEntry"  />
+                    <Entry Placeholder="Enter student's faculty" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentFacultyEntry"  />
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Button Text="Add New" TextColor="#3D3D3D" BackgroundColor="#36A8C1" CornerRadius="3" 
+                                WidthRequest="130" Clicked="AddStudentAction"  />
+                        <Button Text="Cancel" TextColor="#36A8C1" BackgroundColor="#3D3D3D"
+                                WidthRequest="130" 
+                                HorizontalOptions="EndAndExpand" Clicked="CancelAction" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

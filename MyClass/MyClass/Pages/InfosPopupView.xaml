@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyClass.Pages.InfosPopupView"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" >
+
+    <StackLayout Margin="24" Padding="24" Spacing="24"
+                 BackgroundColor="White" 
+                 VerticalOptions="Center">
+        <Label FontSize="24" x:Name="PopUpStudentName" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 20, 0, 0" x:Name="PopUpStudentAbsenceSL">  
+            <Image Source="ic_absent" WidthRequest="50"  />
+            <Label FontSize="30" x:Name="PopUpStudentAbsence" 
+                   Padding="10, 5" Margin="-40, 0, 0, 0" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 10, 0, 20" x:Name="PopUpStudentPresentSL">
+            <Image Source="ic_present" WidthRequest="50"  />
+            <Label FontSize="30" x:Name="PopUpStudentPresent" 
+                   Padding="10, 5" Margin="-40, 0, 0, 0" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+        <Button Text="Close" Clicked="ClosePopUpDtails" BackgroundColor="Transparent" 
+                TextColor="#36A8C1" />
+    </StackLayout>
+
+</pages:PopupPage>

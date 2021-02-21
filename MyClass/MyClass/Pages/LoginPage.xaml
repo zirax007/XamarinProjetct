@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyClass.Pages.LoginPage"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Margin="0" Padding="0">
+                    <RelativeLayout Margin="0"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="Start" >
+
+                        <Image 
+                                Source="login_bg" x:Name="HeaderBg"  
+                                HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Aspect="Fill"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                        
+                        />
+
+                        <BoxView BackgroundColor="#f8eeee" Opacity="0.7"
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                         />
+
+                        <Image 
+                                Source="logo"
+                                WidthRequest="100"
+                                HeightRequest="100"
+                                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.36}"
+                                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.33}"
+                        />
+                    </RelativeLayout>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Padding="50, 20" VerticalOptions="CenterAndExpand">
+                    <Entry Placeholder="Enter your username" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="UsernameEntry" Margin="0, 15, 0, 0" />
+                    <Entry Placeholder="Choose a password" IsPassword="True" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="PasswordEntry" Margin="0, 15, 0, 0" />
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Button Text="Login" TextColor="#3D3D3D" BackgroundColor="#58B3C5" CornerRadius="3" 
+                                Padding="20, 0, 20, 0" WidthRequest="130" Clicked="LoginAction" />
+                        <Button Text="Sign Up" TextColor="#58B3C5" BackgroundColor="#3D3D3D" 
+                                CornerRadius="3" Padding="20, 0, 20, 0" WidthRequest="130" 
+                                HorizontalOptions="EndAndExpand" Clicked="RegisterNavigationAction" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

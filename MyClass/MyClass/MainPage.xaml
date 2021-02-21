@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MyClass"
+             x:Class="MyClass.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" 
+                    Source="teaching_illu"
+                    WidthRequest="250"
+                    Margin="0"
+                    />
+
+                <StackLayout Grid.Row="1" Padding="30, 20">
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Image
+                            Source="absence"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            />
+                        <Button Text="Absence" TextColor="#36A8C1" 
+                                BackgroundColor="Transparent" 
+                                BorderWidth="2" BorderColor="#36A8C1" 
+                                CornerRadius="3" 
+                                Padding="20, 0, 20, 0" 
+                                WidthRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="AbsenceNavigationAction"
+                                />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Image
+                            Source="add_studient"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            />
+                        <Button Text="Add Studient" TextColor="#36A8C1" 
+                                BackgroundColor="Transparent" 
+                                BorderWidth="2" BorderColor="#36A8C1"  
+                                CornerRadius="3" 
+                                Padding="20, 0, 20, 0" 
+                                WidthRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="AddStudentNavigationAction"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Image
+                            Source="lesson"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            />
+                        <Button Text="New Lesson" TextColor="#36A8C1" 
+                                BackgroundColor="Transparent" 
+                                BorderWidth="2" BorderColor="#36A8C1" 
+                                CornerRadius="3" 
+                                Padding="20, 0, 20, 0" 
+                                WidthRequest="100"
+                                HorizontalOptions="FillAndExpand" 
+                                Clicked="NewLessonNavigationAction"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Image
+                            Source="magnifier"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            />
+                        <Button Text="Search" TextColor="#36A8C1" 
+                                BackgroundColor="Transparent" 
+                                BorderWidth="2" BorderColor="#36A8C1" 
+                                CornerRadius="3" 
+                                Padding="20, 0, 20, 0" 
+                                WidthRequest="100"
+                                HorizontalOptions="FillAndExpand" 
+                                Clicked="SearchNavigationAction"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Image
+                            Source="logout"
+                            WidthRequest="50"
+                            HeightRequest="50"
+                            />
+                        <Button Text="Logout" TextColor="#36A8C1" 
+                                BackgroundColor="Transparent" 
+                                BorderWidth="2" BorderColor="#36A8C1" 
+                                CornerRadius="3" 
+                                Padding="20, 0, 20, 0" 
+                                WidthRequest="100"
+                                HorizontalOptions="FillAndExpand"
+                                Clicked="LogoutNavigationAction"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

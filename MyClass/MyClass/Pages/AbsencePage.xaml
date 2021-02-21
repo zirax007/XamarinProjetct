@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MyClass"
+             x:Class="MyClass.Pages.AbsencePage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout  Grid.Row="0" Orientation="Horizontal" Margin="15, 5">
+                <Picker Title="-- Select a Lesson --" x:Name="LessonsPicker" 
+                        ItemsSource="{Binding LessonsList}" 
+                        SelectedItem="{Binding SelectedLesson, Mode=TwoWay}" 
+                        ItemDisplayBinding="{Binding Name}" />
+                <Entry Placeholder="Lesson's faculty" PlaceholderColor="#AAEBEBEB" IsEnabled="False"
+                           FontSize="20" TextColor="White" x:Name="LessonFacultyEntry" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+
+            <ListView  Grid.Row="1" x:Name="StudentsLV" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="5" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="Center"
+                                   HasShadow="True"
+                                   IsClippedToBounds="True"
+                                   Margin="15, 5"
+                                   Padding="0">
+                                <StackLayout Padding="15, 10"   
+                                            Orientation="Horizontal"
+                                            BackgroundColor="White">
+                                        <Label Text="{Binding FirstName}" FontSize="18" />
+                                        <Label Text="{Binding LastName}" FontSize="18" />
+                                    <CheckBox HorizontalOptions="EndAndExpand"
+                                              IsChecked="{Binding Absent}" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="20, 10" BackgroundColor="#eee">
+                <Button Text="Save" TextColor="#36A8C1" BackgroundColor="Transparent" 
+                        CornerRadius="3" BorderColor="#36A8C1" BorderWidth="2" WidthRequest="150"
+                        Clicked="SaveAction"/>
+                <Button Text="Cancel" TextColor="#36A8C1" BackgroundColor="Transparent" CornerRadius="3" 
+                        WidthRequest="150" HorizontalOptions="EndAndExpand" 
+                        Clicked="CancelAction" />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

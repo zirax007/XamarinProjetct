@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="MyClass"
+             x:Class="MyClass.Pages.SearchStudent">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="White">
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" 
+                    Source="search_absence"
+                    WidthRequest="250"
+                    />
+
+                <Label Grid.Row="1"  Text="Search for a Student" 
+                    HorizontalOptions="Center"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    Margin="0, 0, 0, 20"
+                    />
+
+                <StackLayout Grid.Row="2" Padding="30, 20" Spacing="10">
+                    <Entry Placeholder="Enter student's last name" 
+                           TextChanged="StudentLastNameEntry_TextChanged" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentLastNameEntry"/>
+                    <Entry Placeholder="Student's faculty" 
+                           IsEnabled="False" PlaceholderColor="#AA666666" 
+                           FontSize="18" TextColor="#3D3D3D" x:Name="StudentFacultyEntry" />
+                    <Picker Title="-- Select a Lesson --" x:Name="LessonsPicker" 
+                            ItemsSource="{Binding LessonsList}" 
+                            SelectedItem="{Binding SelectedLesson, Mode=TwoWay}" 
+                            ItemDisplayBinding="{Binding Name}" />
+                    <StackLayout Orientation="Horizontal" Margin="0, 30, 0, 0">
+                        <Button Text="Details" TextColor="#3D3D3D" BackgroundColor="#36A8C1" CornerRadius="3" 
+                                WidthRequest="130" Clicked="SearchStudentAction"  />
+                        <Button Text="Cancel" TextColor="#36A8C1" BackgroundColor="#3D3D3D"
+                                WidthRequest="130" 
+                                HorizontalOptions="EndAndExpand" Clicked="CancelAction" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
